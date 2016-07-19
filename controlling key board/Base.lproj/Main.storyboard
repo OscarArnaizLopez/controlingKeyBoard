@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="controlling_key_board" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSv-A4-fGy">
+                                <rect key="frame" x="124" y="54" width="353" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="bbc-Qo-9bM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7r-YI-sPt">
+                                <rect key="frame" x="175" y="100" width="251" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="I4q-r9-G92"/>
+                                </constraints>
+                                <state key="normal" title="Set textfield text on bottom label"/>
+                                <connections>
+                                    <action selector="setTextTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBK-RR-T6x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label to be covered by keyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f6-eE-rnh">
+                                <rect key="frame" x="161" y="522" width="278" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="4bm-xy-y7Y"/>
+                                    <constraint firstAttribute="height" constant="37" id="iQd-Kq-XRR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6f6-eE-rnh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CV0-ih-Lhq"/>
+                            <constraint firstItem="q7r-YI-sPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFk-zL-bca"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6f6-eE-rnh" secondAttribute="bottom" constant="41" id="Typ-G4-uWH"/>
+                            <constraint firstItem="q7r-YI-sPt" firstAttribute="top" secondItem="pSv-A4-fGy" secondAttribute="bottom" constant="16" id="b8g-Tx-vqs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pSv-A4-fGy" secondAttribute="trailing" constant="103" id="iDX-9V-eZ8"/>
+                            <constraint firstItem="pSv-A4-fGy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="jy9-f4-zbH"/>
+                            <constraint firstItem="pSv-A4-fGy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xnU-f2-fqH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLbl" destination="6f6-eE-rnh" id="7mH-FJ-2Qx"/>
+                        <outlet property="textTxf" destination="pSv-A4-fGy" id="2ba-eh-zUc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
