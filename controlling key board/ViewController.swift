@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Need to delegate the texfield on viewcontroller
         self.textTxf.delegate = self
     }
 
@@ -28,6 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    
+    // textFieldShouldReturn is triggered on "return" key tap
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
         return true
